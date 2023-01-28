@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="info" *ngIf="myMovie">
+      <div class="card" style="width: 25rem;">
+          <img src="{{myMovie.Poster}}" class="card-img-top" alt="{{myMovie.Title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{myMovie.Title | uppercase}}</h5>
+            <p class="card-text">{{myMovie.Pilot}}</p>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item infofilm">Year: {{myMovie.Year}}</li>
+            <li class="list-group-item infofilm">Writer: {{myMovie.Writer}}</li>
+            <li class="list-group-item infofilm ">Director: {{myMovie.Director}}</li>
+            <li class="list-group-item infofilm">Country: {{myMovie.Country}}</li>
+            <li class="list-group-item infofilm">language: {{myMovie.Language}}</li>
+          </ul>
+          <div class="card-body">
+            <input class="btn-danger" type="button" value="Close"
+                            [routerLink]="['']">
+          </div>
+        </div>
+  </div>
+</div>  

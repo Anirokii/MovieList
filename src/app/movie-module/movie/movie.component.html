@@ -1,0 +1,39 @@
+<div class="content">
+    <section class="films" id="films">
+        <div class="max-width">
+            <h2 class="title">My Movie List</h2>
+            <div class="carousel , row" >
+                        <div class="card , col" *ngFor="let film of myMovieList">
+                            <div class="box">
+                                <img src="{{film.Poster}}" alt={{film.Title}}>
+                                <div class="text">{{film.Title.toUpperCase()}}</div>
+                                <div class="row"  >
+                                    <div class="col" *ngFor="let ggg of film.Genre">
+                                        <p class="{{ggg | genreColor}} ">{{ggg}}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text2">{{film.Year}}</p>
+                                </div>
+                                <div class="row , bouttons">
+                                    <div class="col" routerLinkActive="active">
+                                        <input type="button" class="btn-danger" (click)="goToMovieInfo(film.Id)" value="Info">
+                                    </div>
+                                    &nbsp;
+                                    <div class="col">
+                                        <button type="button" class="btn-danger" (click)="removeMovie(film.Id)">Remove</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>   
+            </div>
+            <div class="row" routerLinkActive="active">
+                <input type="button" class="btn-danger" [routerLink]="['/addmovie']" value="AddMovie">
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</div>

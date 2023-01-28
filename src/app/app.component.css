@@ -1,0 +1,7 @@
+.content_body{
+    min-height: 100%;
+    padding: 60px 1rem;
+    background: white;
+    background-image: url("../assets/wallllll.jpg");
+    display: block;
+}
